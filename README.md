@@ -1,6 +1,6 @@
 # Ciencias3
 Universidad Distrital
-Repositorio de Ciencias de la computación 3
+Repositorio de Ciencias de la Computación 3
 Grupo 020-84
 
 Integrantes:
