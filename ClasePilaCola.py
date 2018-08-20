@@ -50,3 +50,25 @@ class Pila:
         """ Devuelve True si la lista está vacía, False si no. """
         return self.items == []
     
+    
+class Libro():
+    titulo = ""
+    autor = ""
+    categoria = ""
+
+class Moto ():
+    placa = ""
+    FichaPropiedad = ""
+    Horario = ""
+    CodigoCarnet = ""
+
+    
+cola = Cola()
+
+archivo = open("libros.csv", "r")
+lista = [(x.split(";")[0],x.split(";")[1],x.split(";")[2]) for x in archivo.readlines()]
+for x in lista:
+    cola.encolar(x)
+print(lista)
+
+    
