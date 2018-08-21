@@ -24,6 +24,15 @@ class Cola:
         """ Devuelve True si la lista está vacía, False si no. """
         return self.items == []
 
+    def busqueda(self,colaPr,titulo):
+          colaNueva = Cola()
+          while colaPr.es_vacia()==False:
+                  print("hOLAZ")
+                  elemento = str(colaPr.desencolar())
+                  if(titulo in elemento):
+                      colaNueva.encolar(elemento)
+                  return colaNueva.items
+
 class Pila:
     """ Representa una pila con operaciones de apilar, desapilar y
         verificar si está vacía. """
@@ -64,7 +73,9 @@ class Moto ():
     Horario = ""
     CodigoCarnet = ""
 
-cola = Cola()
+
+if __name__== "__main__":
+ cola = Cola()
 archivo = open("libros.csv", "r")
 lista = [(x.split(";")[0],x.split(";")[1],x.split(";")[2]) for x in archivo.readlines()]
 for x in lista:
@@ -79,8 +90,10 @@ while True:
         while cola.es_vacia() != True:
                 print(cola.desencolar())
     elif opcion==2:
-        colaTitulos = Cola()
-        print(cola.items)
+        while cola.es_vacia()!=True:
+                print (cola.busqueda(cola,'Anna Llenas'))
+        
+        #print(cola.items)
     elif opcion==3:
         colaAutores = Cola()
         print(cola.items)
