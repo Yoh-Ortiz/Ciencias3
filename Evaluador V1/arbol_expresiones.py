@@ -22,12 +22,24 @@ def evaluar(arbol):
     if arbol.valor == "*":
         return evaluar(arbol.izq) * evaluar(arbol.der)
     return int(arbol.valor)
+
+
+pilaEnc = Pila()
+archivo = open("expresiones.in", "r")
+lista = []
+lista_esc =[]
+for x in  archivo.readlines():
+    lista.append(x.strip("\n"))
+archivo.close()
+for x in lista:
+        exp = x.split(" ")
+        convertir(exp, pilaEnc)
+        respuesta =(evaluar(pilaEnc.desapilar()))
+        print(respuesta)
+        lista_esc.append(str(respuesta))
+
+arc_salida=open("expresiones.out","w")
+for i in range(0,len(lista_esc)):
+    arc_salida.write(lista_esc[i]+"\n")
     
-exp = raw_input("ingrese l expresion en posfija: ").split(" ")
-
-pila = Pila()
-
-convertir(exp, pila)
-
-print evaluar(pila.desapilar())
-
+arc_salida.close()
