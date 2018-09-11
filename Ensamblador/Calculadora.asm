@@ -13,8 +13,8 @@ cmp cad1[si], "$" ;si cadena es vacia sigue
 
  mov bl, 10       ;bl=10
  mul bl           ;multiplicar
-sub cad1[si], '0' ;restar sin llevar 
- add al, cad1[si]
+sub cad1[si], '0' ;restar bytes de memoria  
+ add al, cad1[si] ;transformar bytes de memoria
 
  inc si      ;incrementa si contador
 loop cadAnum ;se termina el ciclo y vuelve
