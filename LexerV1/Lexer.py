@@ -20,9 +20,12 @@ def t_error(t):
     print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
 
-lex.lex() # Build the lexer
+expresiones = "expresiones.txt"
+listaExpresiones = [x.strip('\n') for x in open(expresiones, "r").readlines()]
 
-lex.input("x = 3 - 4 + 5 * 6")
+lex.lex() # Build the lexer
+for x in listaExpresiones:
+lex.input(x)
 while True:
     tok = lex.token()
     if not tok: break
