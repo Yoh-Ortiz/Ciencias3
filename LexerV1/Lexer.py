@@ -25,7 +25,7 @@ listaExpresiones = [x.strip('\n') for x in open(expresiones, "r").readlines()]
 
 lex.lex() # Build the lexer
 for x in listaExpresiones:
-lex.input(x)
+    lex.input(x)
 while True:
     tok = lex.token()
     if not tok: break
