@@ -1,6 +1,6 @@
 import ply.lex as lex
 
-tokens = [ 'NAME','NUMBER','PLUS','MINUS','TIMES','DIVIDE', 'EQUALS', 'NEWLINE' ]
+tokens = [ 'NAME','NUMBER','PLUS','MINUS','TIMES','DIVIDE', 'EQUALS', 'NEWLINE'  ]
 
 t_ignore = ' \t'
 t_NEWLINE = r' \n'
@@ -27,7 +27,8 @@ print(listaExpresiones)
 lex.lex() # Build the lexer
 for x in listaExpresiones:
     lex.input(x)
-while True:
-    tok = lex.token()
-    if not tok: break
-    print str(tok.value) + " - " + str(tok.type)
+
+    while True:
+        tok = lex.token()
+        if not tok: break
+        print str(tok.value) + " - " + str(tok.type)
