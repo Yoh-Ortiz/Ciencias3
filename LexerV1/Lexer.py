@@ -1,8 +1,9 @@
 import ply.lex as lex
 
-tokens = [ 'NAME','NUMBER','PLUS','MINUS','TIMES','DIVIDE', 'EQUALS' ]
+tokens = [ 'NAME','NUMBER','PLUS','MINUS','TIMES','DIVIDE', 'EQUALS', 'NEWLINE' ]
 
 t_ignore = ' \t'
+t_NEWLINE = r' \n'
 t_PLUS = r'\+'
 t_MINUS = r'-'
 t_TIMES = r'\*'
@@ -15,13 +16,13 @@ def t_NUMBER(t):
     t.value = int(t.value)
     return t
 
-# Error handling rule
 def t_error(t):
     print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
 
-expresiones = "expresiones.txt"
-listaExpresiones = [x.strip('\n') for x in open(expresiones, "r").readlines()]
+expresiones = open("expresiones.in", "r")
+listaExpresiones = expresiones.readlines()
+print(listaExpresiones)
 
 lex.lex() # Build the lexer
 for x in listaExpresiones:
