@@ -23,7 +23,6 @@ def t_error(t):
 
 expresiones = open("expresionesNEW.in", "r")
 listaExpresiones = expresiones.readlines()
-print(listaExpresiones)
 
 lex.lex() # Build the lexer
 for x in listaExpresiones:
